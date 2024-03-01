@@ -1,0 +1,12 @@
+.todo-list__item-update,
+.todo-list__item-Cancel{
+  font-size: 14px;
+  border-radius: 2em;
+  padding: 0.75em 1.5em;
+  cursor: pointer;
+  color: #e3e3e3; 
+  border: 1px solid #e3e3e3; 
+  letter-spacing: 1px;
+  font-family: 'Source Sans Pro', sans-serif;
+  transition: 250ms ease-out;
+}

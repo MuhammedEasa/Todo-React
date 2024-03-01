@@ -1,0 +1,245 @@
+/* Reset default styles for a more consistent starting point */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+ }
+
+/* Set default font and prevent anti-aliasing issues */
+html {
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(189, 195, 225, 255) !important; /* Page background color */
+}
+
+/* Set body styles for overflow and display */
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* Styling for the root element, potentially used for overall layout */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Remove default styles from buttons */
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Styles for the main app container */
+.app {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1em; /* Top corners rounded */
+  background-color: rgba(70, 75, 198, 255); /* App background color */
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(25, 25, 25, 0.25); /* Subtle shadow */
+  width: 25%;
+  /* Centering */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* Styles for standard buttons */
+.btn {
+
+  font-size: 14px;
+  margin: 0 0.5em;
+  border-radius: 2em;
+  padding: 0.75em 1.5em;
+  cursor: pointer;
+  color: #3aa87e; /* Button text color */
+  border: 1px solid #4fc08d; /* Button border */
+  letter-spacing: 1px;
+  font-family: 'Source Sans Pro', sans-serif;
+  transition: 250ms ease-out; /* Smooth transition on hover/focus */
+}
+
+/* Hover and focus styles for standard buttons */
+.btn:hover,
+.btn:focus {
+  color: #fff; /* Button text color on hover/focus */
+  background: #4fc08d; /* Button background color on hover/focus */
+}
+
+/* Styles for the form container */
+.form {
+  width: 100%;
+  padding: 1.5rem 1rem 0 1rem;
+}
+
+/* Styles for the input field within the form */
+.form__input {
+  width: 100%;
+  font-size: 14px;
+  margin-right: 0.5em; /* Adjust margin to create space between input and button */
+  border-radius: 2em;
+  padding: 0.75em 1.5em;
+   background: #e3e3e3;
+  font-family: 'Source Sans Pro', sans-serif;
+  border: 1px solid #e3e3e3; /* Input field border */
+  transition: border 250ms ease-out; /* Smooth border transition */
+  margin-bottom: 10px;
+  color: #3aa87e;
+}
+.form__input::placeholder {
+  color: #4fc08d; /* Set your desired text color for the placeholder */
+}
+/* Focus styles for the input field */
+.form__input:focus {
+  border: 1px solid #4fc08d; /* Input field border color on focus */
+  outline: none;
+}
+
+/* Styles for the button within the form */
+.form__submit-btn {
+  font-size: 14px;
+  border-radius: 2em;
+  padding: 0.75em 1.5em;
+  cursor: pointer;
+  color: #e3e3e3; /* Button text color */
+  border: 1px solid #e3e3e3; /* Button border */
+  letter-spacing: 1px;
+  font-family: 'Source Sans Pro', sans-serif;
+  transition: 250ms ease-out; /* Smooth transition on hover/focus */
+}
+
+/* Hover and focus styles for the button */
+.form__submit-btn:hover,
+.form__submit-btn:focus {
+  color: #4fc08d; /* Button text color on hover/focus */
+  background: #e3e3e3; /* Button background color on hover/focus */
+}
+
+
+/* Styles for the to-do list container */
+.todo-list {
+  width: 100%;
+  padding: 0 1rem;
+  flex: 1;
+}
+/* Styles for individual to-do list items (continued) */
+.todo-list__item {
+  margin-bottom: 0.5em;
+  border-radius: 3px;
+  transition: 200ms; /* Smooth transition on hover */
+  color: rgba(198, 200, 240, 255); /* Text color for to-do items */
+}
+
+.todo-list__item:last-child {
+  margin-bottom: 0; /* Remove bottom margin for the last item */
+}
+
+.todo-list__item.complete {
+  color: lightgreen; /* Text color for completed items */
+}
+
+/* Styles for the content area of each to-do list item */
+.todo-list__item-content {
+  position: relative;
+}
+
+/* Styling for the line appearing on hover/focus under each item */
+.todo-list__item-content:after {
+  content: "";
+  position: absolute;
+  top: 100%; /* Positioned below the content */
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #4fc08d; /* Background color of the line */
+  transition: 250ms ease-out; /* Smooth transition */
+  transform-origin: center;
+  transform: scaleX(0); /* Initially hidden */
+}
+
+/* Hover and focus styles for the line appearing under each item */
+.todo-list__item-content:hover:after,
+.todo-list__item-content:focus:after {
+  transform: scaleX(1); /* Line becomes visible on hover/focus */
+}
+
+/* Styles for the remove button associated with each item */
+.todo-list__item-remove {
+  margin-left: 0.5em;
+  background: none;
+  border: 1px solid; /* Border for the remove button */
+  color: inherit; /* Inherit text color from the item */
+  padding: 0;
+  line-height: 1;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Circular shape for the button */
+  font-size: 80%;
+  cursor: pointer; /* Indicate clickable action */
+}
+
+/* Styles for the filters container */
+.filters {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 1rem 1.5rem 1rem;
+}
+
+
+
+/* Styles for the group containing input and error message (if any) */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Spacing between input and error message */
+}
+
+/* Styles for error messages (if displayed) */
+.error-message {
+  color: red;
+  font-size: 0.8rem;
+}
+
+.todo-list__item-edit,
+.todo-list__item-delete{
+  font-size: 14px;
+  border-radius: 2em;
+  padding: 0.75em 1.5em;
+  cursor: pointer;
+  color: #e3e3e3; 
+  border: 1px solid #e3e3e3; 
+  letter-spacing: 1px;
+  font-family: 'Source Sans Pro', sans-serif;
+  transition: 250ms ease-out;
+}
+.todo-list__item-edit:hover,
+.todo-list__item-delete:hover {
+  color: #4fc08d; 
+  background: #e3e3e3;
+}
